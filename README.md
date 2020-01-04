@@ -12,6 +12,9 @@ devtools::install_github("changwn/RMR")
 # Example
 ```
 library("rmr")  #capital sensitive!
+if (!require("robust")) install.packages("robust")
+if (!require("flexmix")) install.packages("flexmix")
+if (!require("robustbase")) install.packages("robustbase")
 data_simu= data_simu_list[[1]]
                 x=t(data_simu$x);y=as.numeric(data_simu$y);
                 formula=as.formula(paste("y~",paste(colnames(x),collapse="+"),sep=""))
