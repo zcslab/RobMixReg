@@ -1,0 +1,2 @@
+# RMR
+Robust Mixture Regression
