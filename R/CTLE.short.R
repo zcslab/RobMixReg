@@ -148,7 +148,7 @@ setMethod("CTLE",
                 cates[inds_in]=opt.fres@cluster
                 cates[outliers]=-1
 		print('here, pval!!!')
-		print('class(refit(opt.fres))')
+		print(class(refit(opt.fres)))
 		print('---0---')
 		print(summary(refit(opt.fres)))
 		print('----1----')
