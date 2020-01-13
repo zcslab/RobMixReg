@@ -155,6 +155,8 @@ setMethod("CTLE",
 		print(typeof(refit(opt.fres)))
 		print('----2----')
 		print(class(summary(refit(opt.fres))))
+		print('----3----')
+		print(typeof(summary(refit(opt.fres))))
 		print('-------!!!!')
 		pvals_final=sapply(summary(refit(opt.fres))@components[[1]], function(x)(x[-1,4]))
                 result = new("RobMixReg", inds_in=inds_in,indout=outliers,ctleclusters=cates,compcoef=coffs_final,comppvals=pvals_final)
