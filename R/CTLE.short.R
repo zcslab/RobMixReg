@@ -150,7 +150,7 @@ setMethod("CTLE",
 		print('here, pval!!!')
 		print('class(refit(opt.fres))')
 		print('---0---')
-		typeof(summary(refit(opt.fres)))
+		print(summary(refit(opt.fres)))
 		print('----1----')
 		print(typeof(refit(opt.fres)))
 		print('----2----')
