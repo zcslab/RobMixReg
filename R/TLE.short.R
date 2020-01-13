@@ -64,11 +64,11 @@ setMethod("TLE",
 					lll=rowSums(www)
 					inds_in=sort(order(lll,decreasing=TRUE)[1:n_keep])
 					llik=sum(lll[inds_in])
-					print(llik)
+					#print(llik)
 					if(abs(llik_old-llik)/llik < 10^(-8) | ccc>MaxIt){
 						flag=1
 					}
-					print(flag)
+					#print(flag)
 				}
 
 

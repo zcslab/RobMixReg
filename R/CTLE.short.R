@@ -120,12 +120,12 @@ setMethod("CTLE",
 					}
 				}
 			}
-			print(sort(unique(outliers)))
+			#print(sort(unique(outliers)))
 			if(fres@k == nc){
 				res_list[[jj]]=fres
 				ooo_list[[jj]]=sort(unique(outliers))
 			}
-			print(paste("The number of iteraction is", ccc))
+			#print(paste("The number of iteraction is", ccc))
 		}
 		ooo_list=ooo_list[][which(sapply(res_list, length)>0)]
 		res_list=res_list[][which(sapply(res_list, length)>0)]
