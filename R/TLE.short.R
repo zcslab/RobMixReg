@@ -77,7 +77,7 @@ setMethod("TLE",
                 cates=vector("numeric",nobs)
                 cates[inds_in]=fres@cluster
                 cates[outliers]=-1
-		pvals_final=sapply(summary(refit(fres))@components[[1]], function(x)(x[-1,4]))
+		pvals_final=sapply(refit(fres)@components[[1]], function(x)(x[-1,4]))
                 result = new("RobMixReg", inds_in=inds_in,indout=outliers,ctleclusters=cates,compcoef=coffs_final,comppvals=pvals_final)
                 result@call <- mycall
                 result
