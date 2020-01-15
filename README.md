@@ -1,4 +1,4 @@
-# RMR
+# rmr
 Robust Mixture Regression
 
 
