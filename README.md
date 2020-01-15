@@ -11,19 +11,32 @@ devtools::install_github("changwn/RMR")
 
 # Example
 ```
-library("rmr")  #capital sensitive!
-if (!require("robust")) install.packages("robust")
-if (!require("flexmix")) install.packages("flexmix")
-if (!require("robustbase")) install.packages("robustbase")
-data_simu= data_simu_list[[1]]
-                x=t(data_simu$x);y=as.numeric(data_simu$y);
-                formula=as.formula(paste("y~",paste(colnames(x),collapse="+"),sep=""))
-                data=data.frame((x),y)
-                ##ctle
-              
-res_CRMR=CTLE(formula,data, nit=20,nc=3)
-tRatio=0.05
-res_TLE= TLE(formula,data, nc=3,tRatio,MaxIt=200)
+library(rmr)
+library(robust)
+library(flexmix)
+library(robustbase)
+library(MASS)
+library(gtools)
+
+# gaussData
+x=(gaussData$x);y=as.numeric(gaussData$y);
+formula01=as.formula("y~x")
+example_data01=data.frame(x,y)
+
+res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
+res_rmr = rmr(lr.method='TLE', formula=formula01, data=example_data01)
+res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
+res_rmr = rmr(lr.method='biSquare', formula=formula01, data=example_data01)
+
+# simuData
+example_data02 <- simuData[,1:3]
+formula02=as.formula("y~X1+X2")
+
+res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01, nc=3)
+res_rmr = rmr(lr.method='TLE', formula=formula01, data=example_data01, nc=3,tRatio=0.05)
+res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01, nc=3)
+res_rmr = rmr(lr.method='biSquare', formula=formula01, data=example_data01, nc=3)
+
 
 ```
 # Questions & Problems
