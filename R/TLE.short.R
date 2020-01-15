@@ -1,34 +1,13 @@
 
-library(robust)
-library(flexmix)
-library(robustbase)
-flexmix_2<-function(formula,data1,k,mprior){
-        liks=NULL
-        mix_list=list()
-        niter=10
-	ii=1
-	flag=0
-	while(ii<niter & flag==0){
-		tmp_mix = try(flexmix(formula,data1,k=k,control = list(minprior = mprior)),silent=TRUE)
-                if(!inherits(tmp_mix, "try-error")){
-			if(tmp_mix@k==k){
-				flag=1
-			}
-                }
-		ii=ii+1
-        }
-        return(tmp_mix)
-}
-
-
-setClass("RobMixReg",
-	representation(inds_in="numeric",
-	indout="ANY",
-	ctleclusters="ANY",
-	compcoef="ANY",
-	comppvals="ANY",
-	call="call"))
-
+#' Method TLE.
+#' @name TLE
+#' @rdname TLE-methods
+#' @exportMethod TLE
+#' @param formula A symbolic description of the model to be fit.
+#' @param data A data frame containing the variables in the model.
+#' @param tRatio An tRatio parameter for TLE method.
+#' @param MaxIt An MaxIt parameter for TLE method.
+#' @param nc An optional number of clusters.
 ##########################################################################################
 ##### setGeneric function TLE
 ##########################################################################################
@@ -36,7 +15,8 @@ setGeneric("TLE",
 	function(formula,data, nc=2,tRatio,MaxIt=200)
 	standardGeneric("TLE"))
 
-
+#' @rdname TLE-methods
+#' @aliases CTLE,formula,ANY,numeric,numeric,numeric-method
 ### #######################################################################################
 ### #######################################################################################
 ### #######################################################################################

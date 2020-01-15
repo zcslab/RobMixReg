@@ -1,11 +1,23 @@
-#rm(list=ls())
-#load("ttt.RData")
-library(MASS);
-library(robustbase)
-library(gtools)
+
+#' bisquare function title.
+#'
+#' @param t A number.
+#' @param k A number.
+#' @return Return value.
 bisquare<-function(t,k=4.685){out=t*pmax(0,(1-(t/k)^2))^2;out}
+
+#' biscalew function title.
+#'
+#' @param t A number.
+#' @return Return value.
 biscalew<-function(t){ t[which(t==0)]=min(t[which(t!=0)])/10; out=pmin(1-(1-t^2/1.56^2)^3,1)/t^2;out}
 
+#' mixlinrb_bione function title.
+#'
+#' @param formula A formula.
+#' @param data A parameter.
+#' @param nc A parameter.
+#' @return Return value.
 ################
 #the robust EM algorithm to fit the mixture of linear regression based on bisquare function
 #Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models. Computational #Statistics and Data Analysis, 56, 2347-2359.
@@ -40,7 +52,7 @@ mixlinrb_bione<-function(formula,data,nc=2){
 		np=apply(pk,2,sum);pr=np/n;
 		r[which(r==0)]=min(r[which(r!=0)])/10;
 		for(j in seq(nc)){
-			w <<- pk[,j]*bisquare(r[,j])/r[,j];
+			w <- pk[,j]*bisquare(r[,j])/r[,j];
 			tmp_mod=lm(formula,data=data,weights=w)
 			bet[j,]= coefficients(tmp_mod)
 			r[,j]= resid(tmp_mod)/sig[j];
@@ -57,18 +69,15 @@ mixlinrb_bione<-function(formula,data,nc=2){
 ### mixlinrb_bi estimates the mixture regression parameters robustly using bisquare function #based on multiple initial values. The solution is found by the modal solution
 
 
-library(robust)
-library(flexmix)
-library(robustbase)
 
-setClass("RobMixReg",
-	representation(inds_in="ANY",
-	indout="ANY",
-	ctleclusters="ANY",
-	compcoef="ANY",
-	comppvals="ANY",
-	call="call"))
-
+#' Method mixlinrb_bi.
+#' @name mixlinrb_bi
+#' @rdname mixlinrb_bi-methods
+#' @exportMethod mixlinrb
+#' @param formula A symbolic description of the model to be fit.
+#' @param data A data frame containing the variables in the model.
+#' @param nc An optional number of clusters.
+#' @param numini An numini parameter for biSauqre method.
 ##########################################################################################
 ##### setGeneric function mixlinrb_bi
 ##########################################################################################
@@ -76,7 +85,8 @@ setGeneric("mixlinrb_bi",
 	function(formula,data, nc=2,numini=200)
 	standardGeneric("mixlinrb_bi"))
 
-
+#' @rdname mixlinrb_bi-methods
+#' @aliases mixlinrb_bi,formula,ANY,numeric,numeric-method
 ### #######################################################################################
 ### #######################################################################################
 ### #######################################################################################

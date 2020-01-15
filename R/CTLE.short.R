@@ -1,6 +1,10 @@
-library(robust)
-library(flexmix)
-library(robustbase)
+
+#' flexmix_2 function title.
+#' @param formula A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.
+#' @param data1 A number.
+#' @param k A number.
+#' @param mprior A number.
+#' @return The result explanation.
 flexmix_2<-function(formula,data1,k,mprior){
         liks=NULL
         mix_list=list()
@@ -19,7 +23,19 @@ flexmix_2<-function(formula,data1,k,mprior){
         return(tmp_mix)
 }
 
-
+#' Class RobMixReg.
+#'
+#' Class \code{RobMixReg} defines a robust mixture regression class as a S4 object.
+#'
+#' @name RobMixReg-class
+#' @rdname RobMixReg-class
+#' @exportClass RobMixReg
+#' @slot inds_in The index number in the regression predicted line.(non-outlier)
+#' @slot indout The index number not in the regression predicted line.(outlier)
+#' @slot ctleclusters The cluster information.
+#' @slot compcoef Component coefficient.
+#' @slot comppvals Component p values.
+#' @slot call Call function.
 setClass("RobMixReg",
 	representation(inds_in="numeric",
 	indout="ANY",
@@ -28,6 +44,15 @@ setClass("RobMixReg",
 	comppvals="ANY",
 	call="call"))
 
+
+#' Method CTLE.
+#' @name CTLE
+#' @rdname CTLE-methods
+#' @exportMethod CTLE
+#' @param formula A symbolic description of the model to be fit.
+#' @param data A data frame containing the variables in the model.
+#' @param nit An nit parameter for CTLE method.
+#' @param nc An optional number of clusters.
 ##########################################################################################
 ##### setGeneric function CTLE
 ##########################################################################################
@@ -35,7 +60,10 @@ setGeneric("CTLE",
 	function(formula,data, nit=20,nc=2)
 	standardGeneric("CTLE"))
 
-
+#' DeOut function title.
+#' @param daData A parameter.
+#' @param method A parameter.
+#' @return The result explanation.
 DeOut<-function(daData,method){
 ################################################################################################################################################################
 ## Old 3 sigma, or "normal", Rule
@@ -68,7 +96,8 @@ return(ooo)
 }
 
 
-
+#' @rdname CTLE-methods
+#' @aliases CTLE,formula,ANY,ANY,numeric-method
 ### #######################################################################################
 ### #######################################################################################
 ### #######################################################################################
