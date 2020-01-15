@@ -132,7 +132,7 @@ setMethod("CTLE",
 		llik=sapply(res_list, function(x)x@logLik)
 		res_list=res_list[][order(llik,decreasing=TRUE)]
 		ooo_list=ooo_list[][order(llik,decreasing=TRUE)]
-		
+
 		list1=sapply(ooo_list, function(x)list(1*((1:nobs)%in%x)))
 		opt.ind=which.min(sapply(list1, function(x)sum((x-Reduce("+",list1)/length(list1))^2)))
 		opt.fres=res_list[[opt.ind]]
@@ -143,7 +143,7 @@ setMethod("CTLE",
                 cates=vector("numeric",nobs)
                 cates[inds_in]=opt.fres@cluster
                 cates[outliers]=-1
-		pvals_final=sapply(summary(refit(opt.fres))@components[[1]], function(x)(x[-1,4]))
+		pvals_final=sapply(refit(opt.fres)@components[[1]], function(x)(x[-1,4]))
                 result = new("RobMixReg", inds_in=inds_in,indout=outliers,ctleclusters=cates,compcoef=coffs_final,comppvals=pvals_final)
                 result@call <- mycall
                 result
