@@ -6,7 +6,7 @@ Robust Mixture Regression
 # Installation
 ```
 library("devtools")
-devtools::install_github("changwn/RMR")
+devtools::install_github("changwn/rmr")
 ```
 
 # Example
