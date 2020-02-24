@@ -1,8 +1,8 @@
 
 #' flexmix_2 function title.
 #' @param formula A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.
-#' @param data1 A number.
-#' @param k A number.
+#' @param data1 The data matrix for mixture regression.
+#' @param k The default mixture regression line number.
 #' @param mprior A number.
 #' @return The result explanation.
 flexmix_2<-function(formula,data1,k,mprior){
@@ -62,7 +62,7 @@ setGeneric("CTLE",
 
 #' DeOut function title.
 #' @param daData A parameter.
-#' @param method A parameter.
+#' @param method Choose from '3sigma','hampel' and 'boxplot'.
 #' @return The result explanation.
 DeOut<-function(daData,method){
 ################################################################################################################################################################

@@ -9,9 +9,9 @@ mixlinrb_bione(formula, data, nc = 2)
 \arguments{
 \item{formula}{A formula.}
 
-\item{data}{A parameter.}
+\item{data}{The data matrix for mixture regression.}
 
-\item{nc}{A parameter.}
+\item{nc}{The number of component.}
 }
 \value{
 Return value.

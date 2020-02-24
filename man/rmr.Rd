@@ -4,8 +4,8 @@
 \alias{rmr}
 \title{Robust Mixture Regression using four methods.}
 \usage{
-rmr(lr.method = NULL, formula = NULL, data = NULL, nc = 3,
-  nit = 20, tRatio = 0.2, MaxIt = 200, numini = 20)
+rmr(lr.method = "flexmix", formula = NULL, data = NULL, nc = 2,
+  nit = 20, tRatio = 0.05, MaxIt = 200, numini = 20)
 }
 \arguments{
 \item{lr.method}{A robust mixture regression method to be used. Should be one of "flexmix","TLE","CTLE","biSquare".}
@@ -42,5 +42,5 @@ x=(gaussData$x);y=as.numeric(gaussData$y);
 formula01=as.formula("y~x")
 example_data01=data.frame(x,y)
 res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
-
+res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
 }

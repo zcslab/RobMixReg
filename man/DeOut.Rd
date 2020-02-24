@@ -9,7 +9,7 @@ DeOut(daData, method)
 \arguments{
 \item{daData}{A parameter.}
 
-\item{method}{A parameter.}
+\item{method}{Choose from '3sigma','hampel' and 'boxplot'.}
 }
 \value{
 The result explanation.

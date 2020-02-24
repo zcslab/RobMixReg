@@ -9,9 +9,9 @@ flexmix_2(formula, data1, k, mprior)
 \arguments{
 \item{formula}{A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.}
 
-\item{data1}{A number.}
+\item{data1}{The data matrix for mixture regression.}
 
-\item{k}{A number.}
+\item{k}{The default mixture regression line number.}
 
 \item{mprior}{A number.}
 }

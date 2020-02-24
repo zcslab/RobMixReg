@@ -24,15 +24,15 @@
 #' example_data01=data.frame(x,y)
 
 #' res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
-#'
-rmr <- function(lr.method=NULL, formula=NULL, data=NULL, nc=3, nit=20, tRatio=0.2, MaxIt=200, numini=20)
+#' res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
+rmr <- function(lr.method="flexmix", formula=NULL, data=NULL, nc=2, nit=20, tRatio=0.05, MaxIt=200, numini=20)
 {
   if(is.null(formula)) stop('Please input formula!')
   if(is.null(data)) stop('data is null! Please input data')
-  if(is.null(lr.method)) stop('Please input the regression method from ("flexmix","TLE","CTLE","biSquare"). ')
 
-  method.lib <- c('flexmix', 'TLE', 'CTLE', 'biSquare')
-  if(!lr.method %in% method.lib) stop('lr.method must be chosen from "flexmix","TLE","CTLE","biSquare"!  ')
+
+  method.lib <- c('flexmix', 'TLE', 'CTLE', 'biSquare','mixLp')
+  if(!lr.method %in% method.lib) stop('lr.method must be chosen from "flexmix","TLE","CTLE","biSquare","mixLp" !  ')
 
   if(lr.method=='flexmix')
   {
@@ -53,6 +53,11 @@ rmr <- function(lr.method=NULL, formula=NULL, data=NULL, nc=3, nit=20, tRatio=0.
 	{
     res = mixlinrb_bi(formula,data,nc, numini)
 	}
+
+  if(lr.method=='mixLp')
+  {
+    res = mixLp(formula, data, nc, numini)
+  }
 
   return(res)
 }

@@ -2,12 +2,19 @@ Package: rmr
 Type: Package
 Title: Robust Mixture Regression
 Version: 0.1.0
-Author: Sha Cao
-Maintainer: Sha Cao <shacao@iu.edu>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Data: 2019-02-24
+Author: 
+  Sha Cao [aut, cph, ths],
+  Wennan Chang [aut, cre],
+  Chi Zhang [aut, ctb, ths],
+Maintainer: Wennan Chang <wnchang@iu.edu>
+Description: Robust mixture regression.
+    Integrated total four algorithms.
 Depends: R (>= 3.5.0)
-License: What license is it under?
+License: GPL
 Encoding: UTF-8
 LazyData: true
-Imports: robust, flexmix
+Imports: robust, flexmix, robustbase, gtools, MASS, methods
+RoxygenNote: 6.1.1
+URL: https://github.com/changwn/rmr
+BugReports: https://github.com/changwn/rmr/issues
