@@ -118,7 +118,7 @@ setMethod("CTLE",
 			www=NULL
 			for(ii in 1:nc){
 				inds_random=sample(1:nobs,((nx+1)*2*5))
-				mod_tmp=lmRob(formula=formula, data=data[inds_random,],control = lmRob.control(weight=c("Bisquare", "Bisquare")))
+				mod_tmp=lmrob(formula=formula, data=data[inds_random,],control = lmrob.control(weight=c("Bisquare", "Bisquare")))
 				www=cbind(www,dnorm(predict(mod_tmp, newdata=data),mean=0,sd=summary(mod_tmp)$sigma))
 			}
 			nc_tmp=nc
@@ -129,7 +129,7 @@ setMethod("CTLE",
 				for(j in 1:nc_tmp){
 					inds_in_tmp=which(apply(www, 1, which.max)==j)
 					#ltsres = lm(formula=formula, data=data[inds_in_tmp,])
-					ltsres = try(lmRob(formula=formula, data=data[inds_in_tmp,],control = lmRob.control(weight=c("Bisquare", "Bisquare"))),silent=TRUE)
+					ltsres = try(lmrob(formula=formula, data=data[inds_in_tmp,],control = lmrob.control(weight=c("Bisquare", "Bisquare"))),silent=TRUE)
 					if(!inherits(ltsres, "try-error")){
 		                                res12 = abs(cbind(1,as.matrix(data)) %*% matrix(c(ltsres$coefficients,-1),ncol=1))[,1] ##could we change it to nx!!!.
 						oo1=inds_in_tmp[DeOut(res12[inds_in_tmp],"hampel")]
