@@ -13,10 +13,6 @@ There was 1 NOTE:
 
 * checking CRAN incoming feasibility ... NOTE
 
-  This is the second submittion of the 'RobMixReg' package.
+  This is the first submittion of the 'RobMixReg' package.
 
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .travis.yml
-  
-  I use travis to test the package works on Linux system.
+
