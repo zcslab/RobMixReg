@@ -13,7 +13,7 @@
 #' @examples
 #' \dontrun{
 #' library(RobMixReg)
-#' library(robust)
+#' #library(robust)
 #' library(flexmix)
 #' library(robustbase)
 #' library(MASS)
