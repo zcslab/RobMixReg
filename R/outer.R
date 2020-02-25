@@ -11,20 +11,20 @@
 #' @param numini An numini parameter for biSauqre method.
 #' @return An S4 object about the regression result.
 #' @examples
-#' library(rmr)
+#' \dontrun{
+#' library(RobMixReg)
 #' library(robust)
 #' library(flexmix)
 #' library(robustbase)
 #' library(MASS)
 #' library(gtools)
-
 #' # gaussData
 #' x=(gaussData$x);y=as.numeric(gaussData$y);
 #' formula01=as.formula("y~x")
 #' example_data01=data.frame(x,y)
-
 #' res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
 #' res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
+#' }
 rmr <- function(lr.method="flexmix", formula=NULL, data=NULL, nc=2, nit=20, tRatio=0.05, MaxIt=200, numini=20)
 {
   if(is.null(formula)) stop('Please input formula!')

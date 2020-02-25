@@ -11,7 +11,7 @@ devtools::install_github("changwn/rmr")
 
 # Example
 ```
-library(rmr)
+library(RobMixReg)
 library(robust)
 library(flexmix)
 library(robustbase)

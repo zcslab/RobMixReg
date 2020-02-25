@@ -1,8 +1,8 @@
-Package: rmr
+Package: RobMixReg
 Type: Package
 Title: Robust Mixture Regression
 Version: 0.1.0
-Data: 2019-02-24
+Date: 2020-02-25
 Author: 
   Sha Cao [aut, cph, ths],
   Wennan Chang [aut, cre],

@@ -31,7 +31,8 @@ An S4 object about the regression result.
 Robust Mixture Regression using four methods.
 }
 \examples{
-library(rmr)
+\dontrun{
+library(RobMixReg)
 library(robust)
 library(flexmix)
 library(robustbase)
@@ -43,4 +44,5 @@ formula01=as.formula("y~x")
 example_data01=data.frame(x,y)
 res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
 res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
+}
 }
