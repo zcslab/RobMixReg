@@ -11,7 +11,7 @@ devtools::install_github("changwn/RobMixReg")
 # Example
 ```
 library(RobMixReg)
-library(robust)
+#library(robust)
 library(flexmix)
 library(robustbase)
 library(MASS)
