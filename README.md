@@ -1,6 +1,5 @@
-# rmr
-Robust Mixture Regression
-
+# Robust Mixture Regression
+r package
 
 
 # Installation
