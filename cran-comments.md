@@ -9,10 +9,14 @@ There were no ERRORs or WARNINGs.
 
 
 
-There was 1 NOTE:
+There was 2 NOTE:
 
 * checking CRAN incoming feasibility ... NOTE
 
-  This is the first submittion of the 'RobMixReg' package.
+  This is the new submittion of the 'RobMixReg' package.
 
-
+* checking top-level files ... NOTE
+Non-standard file/directory found at top level:
+  ‘cran-comments.md’
+  
+  The 'cran-comments.md' file use as the log file. 
