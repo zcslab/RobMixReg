@@ -1,7 +1,7 @@
 # Robust Mixture Regression
 r package
 
-### Robust Mixture Regression Plot
+### Robust Mixture Regression Plot (with outliers)
 <p align="center">
   <img width="400"  src="https://github.com/changwn/RobMixReg/blob/master/pic1.png">
 </p>
