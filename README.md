@@ -1,6 +1,16 @@
 # Robust Mixture Regression
 r package
 
+### Robust Mixture Regression Plot
+<p align="center">
+  <img width="400"  src="https://github.com/changwn/RobMixReg/blob/master/pic1.png">
+</p>
+
+### Add Regresseion Line
+<p align="center">
+  <img width="350"  src="https://github.com/changwn/RobMixReg/blob/master/pic2.png">
+</p>
+
 
 # Installation
 ```
