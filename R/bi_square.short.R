@@ -13,7 +13,7 @@ bisquare<-function(t,k=4.685){out=t*pmax(0,(1-(t/k)^2))^2;out}
 biscalew<-function(t){ t[which(t==0)]=min(t[which(t!=0)])/10; out=pmin(1-(1-t^2/1.56^2)^3,1)/t^2;out}
 
 #' mixlinrb_bione : mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function based on one initial value.
-#' @description : An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
+#' @description  An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 #' @param formula A symbolic description of the model to be fit.
 #' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
 #' @param nc Number of mixture components.
