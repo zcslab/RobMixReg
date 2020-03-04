@@ -1,6 +1,6 @@
-#' rmr package gaussian example data.
+#' RobMixReg package built-in gaussian example data.
 #'
-#' A dataset generated from gaussian distribution in rmr package.
+#' A dataset generated from gaussian distribution in RobMixReg package.
 #'
 #' @format A data frame with 100 rows and 3 variables:
 #' \describe{
@@ -11,9 +11,9 @@
 "gaussData"
 
 
-#' rmr package simulated example data.
+#' RobMixReg package built-in simulated example data.
 #'
-#' A simulation dataset from rmr package.
+#' A simulation dataset from RobMixReg package. This simulation dataset is in dimension 2 and ground truth (include outliers label) of the cluster information also generated.
 #'
 #' @format A data frame with 500 rows and 5 variables:
 #' \describe{

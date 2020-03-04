@@ -3,7 +3,7 @@
 \docType{data}
 \name{simuData}
 \alias{simuData}
-\title{rmr package simulated example data.}
+\title{RobMixReg package built-in simulated example data.}
 \format{A data frame with 500 rows and 5 variables:
 \describe{
   \item{X1}{X1 variable}
@@ -16,6 +16,6 @@
 simuData
 }
 \description{
-A simulation dataset from rmr package.
+A simulation dataset from RobMixReg package. This simulation dataset is in dimension 2 and ground truth (include outliers label) of the cluster information also generated.
 }
 \keyword{datasets}

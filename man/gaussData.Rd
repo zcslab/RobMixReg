@@ -3,7 +3,7 @@
 \docType{data}
 \name{gaussData}
 \alias{gaussData}
-\title{rmr package gaussian example data.}
+\title{RobMixReg package built-in gaussian example data.}
 \format{A data frame with 100 rows and 3 variables:
 \describe{
   \item{x}{x variable}
@@ -14,6 +14,6 @@
 gaussData
 }
 \description{
-A dataset generated from gaussian distribution in rmr package.
+A dataset generated from gaussian distribution in RobMixReg package.
 }
 \keyword{datasets}

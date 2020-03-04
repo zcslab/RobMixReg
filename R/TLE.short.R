@@ -8,6 +8,7 @@
 #' @param tRatio An tRatio parameter for TLE method.
 #' @param MaxIt An MaxIt parameter for TLE method.
 #' @param nc An optional number of clusters.
+#' @return xxx
 ##########################################################################################
 ##### setGeneric function TLE
 ##########################################################################################

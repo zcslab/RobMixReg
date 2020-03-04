@@ -7,15 +7,17 @@
 mixLp_one(formula, data, nc = 2)
 }
 \arguments{
-\item{formula}{The parameter.}
+\item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{The parameter.}
+\item{data}{A data frame containing the variables in the model.}
 
-\item{nc}{The number of component.Default value is 2.}
+\item{nc}{The number of component. Default value is 2.}
 }
 \value{
-Return value.
+xxx.
 }
 \description{
+One step for the mixLp mixture regression. For more details, please see the 'mixLp' function.
+
 The robust EM algorithm to fit the mixture of linear regression based on bisquare function. Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models.
 }

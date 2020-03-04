@@ -1,8 +1,8 @@
 
-#' Robust Mixture Regression using four methods.
+#' The main function of Robust Mixture Regression using five methods.
 #'
-#' @param lr.method A robust mixture regression method to be used. Should be one of "flexmix","TLE","CTLE","biSquare".
-#' @param formula A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.
+#' @param lr.method A robust mixture regression method to be used. Should be one of "flexmix", "TLE", "CTLE", "biSquare".
+#' @param formula A symbolic description of the model to be fit. The general form is "y~x|g" where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.
 #' @param data A data frame containing the variables in the model.
 #' @param nc An optional number of clusters.
 #' @param nit An nit parameter for CTLE method.
@@ -11,7 +11,6 @@
 #' @param numini An numini parameter for biSauqre method.
 #' @return An S4 object about the regression result.
 #' @examples
-#' \dontrun{
 #' library(RobMixReg)
 #' #library(robust)
 #' library(flexmix)
@@ -24,7 +23,7 @@
 #' example_data01=data.frame(x,y)
 #' res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
 #' res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
-#' }
+#'
 rmr <- function(lr.method="flexmix", formula=NULL, data=NULL, nc=2, nit=20, tRatio=0.05, MaxIt=200, numini=20)
 {
   if(is.null(formula)) stop('Please input formula!')

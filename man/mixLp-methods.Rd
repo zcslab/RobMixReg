@@ -7,7 +7,7 @@
 \alias{CTLE,formula,ANY,numeric,numeric-method}
 \title{Method mixLp.}
 \usage{
-mixLp(formula, data, nc = 2, numini = 200)
+mixLp(formula, data, nc=2, numini=200)
 
 \S4method{mixLp}{formula,ANY,numeric,numeric}(formula, data, nc = 2,
   numini = 20)
@@ -21,6 +21,9 @@ mixLp(formula, data, nc = 2, numini = 200)
 
 \item{numini}{The minimal value of nu.}
 }
+\value{
+xxxxxx
+}
 \description{
-Method mixLp.
+mixLp estimates the mixture regression parameters robustly using bisquare function based on multiple initial values. The solution is found by the modal solution.
 }

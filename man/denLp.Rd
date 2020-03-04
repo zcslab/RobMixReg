@@ -2,7 +2,7 @@
 % Please edit documentation in R/mixL.short.R
 \name{denLp}
 \alias{denLp}
-\title{denLp function title.}
+\title{denLp : xxx.}
 \usage{
 denLp(rr, sig)
 }
@@ -15,5 +15,5 @@ denLp(rr, sig)
 Return value.
 }
 \description{
-denLp function title.
+xxx
 }

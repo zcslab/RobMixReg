@@ -2,15 +2,15 @@
 % Please edit documentation in R/outer.R
 \name{rmr}
 \alias{rmr}
-\title{Robust Mixture Regression using four methods.}
+\title{The main function of Robust Mixture Regression using five methods.}
 \usage{
 rmr(lr.method = "flexmix", formula = NULL, data = NULL, nc = 2,
   nit = 20, tRatio = 0.05, MaxIt = 200, numini = 20)
 }
 \arguments{
-\item{lr.method}{A robust mixture regression method to be used. Should be one of "flexmix","TLE","CTLE","biSquare".}
+\item{lr.method}{A robust mixture regression method to be used. Should be one of "flexmix", "TLE", "CTLE", "biSquare".}
 
-\item{formula}{A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.}
+\item{formula}{A symbolic description of the model to be fit. The general form is "y~x|g" where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.}
 
 \item{data}{A data frame containing the variables in the model.}
 
@@ -28,10 +28,9 @@ rmr(lr.method = "flexmix", formula = NULL, data = NULL, nc = 2,
 An S4 object about the regression result.
 }
 \description{
-Robust Mixture Regression using four methods.
+The main function of Robust Mixture Regression using five methods.
 }
 \examples{
-\dontrun{
 library(RobMixReg)
 #library(robust)
 library(flexmix)
@@ -44,5 +43,5 @@ formula01=as.formula("y~x")
 example_data01=data.frame(x,y)
 res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
 res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
-}
+
 }

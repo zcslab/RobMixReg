@@ -1,12 +1,6 @@
-#rm(list=ls())
-#load("ttt.RData")
-# library(MASS);
-# library(robustbase)
-# library(gtools)
 
-
-#' denLp function title.
-#'
+#' denLp : xxx.
+#' @description xxx
 #' @param rr The parameter.
 #' @param sig The parameter.
 #' @return Return value.
@@ -15,20 +9,14 @@ denLp=function(rr,sig){
 }
 
 
-
-
 #' mixLp_one function.
-#'
-#' @param formula The parameter.
-#' @param data The parameter.
-#' @param nc The number of component.Default value is 2.
+#' @description One step for the mixLp mixture regression. For more details, please see the 'mixLp' function.
+#' @param formula A symbolic description of the model to be fit.
+#' @param data A data frame containing the variables in the model.
+#' @param nc The number of component. Default value is 2.
 #' @description The robust EM algorithm to fit the mixture of linear regression based on bisquare function. Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models.
-#' @return Return value.
+#' @return xxx.
 ################
-#the robust EM algorithm to fit the mixture of linear regression based on bisquare function
-#Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models. Computational #Statistics and Data Analysis, 56, 2347-2359.
-#########################
-# mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function #based on one initial value
 mixLp_one<-function(formula,data,nc=2){
 	nx=ncol(data)-1; n = nrow(data)
 	p=nx+1; n1=2*p;
@@ -55,8 +43,7 @@ sig=sig0;pr=pr0;bet=bet0
 	run=0;acc=10^(-4)*max(abs(c(bet,sig,pr)));
 #E-steps
 	repeat{
-		print(run)
-		print(bet)
+		#print(run);	print(bet);
 		prest=c(sig,bet,pr);run=run+1;
 	        for(j in seq(nc)){
 	                pk[,j]=pr[j]*denLp(r[,j],sig[j]);
@@ -87,24 +74,19 @@ sig=sig0;pr=pr0;bet=bet0
 	est=list(theta=theta,difpar=dif,run=run)
 	return(est)
 }
-### mixLp estimates the mixture regression parameters robustly using bisquare function #based on multiple initial values. The solution is found by the modal solution
-
-
-# library(robust)
-# library(flexmix)
-# library(robustbase)
-
-
 
 
 #' Method mixLp.
 #' @name mixLp
+#' @description mixLp estimates the mixture regression parameters robustly using bisquare function based on multiple initial values. The solution is found by the modal solution.
 #' @rdname mixLp-methods
 #' @exportMethod mixLp.
 #' @param formula A symbolic description of the model to be fit.
 #' @param data A data frame containing the variables in the model.
 #' @param nc An optional number of clusters.
 #' @param numini The minimal value of nu.
+#' @usage mixLp(formula, data, nc=2, numini=200)
+#' @return xxxxxx
 ##########################################################################################
 ##### setGeneric function mixLp
 ##########################################################################################

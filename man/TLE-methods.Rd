@@ -23,6 +23,9 @@ TLE(formula, data, nc = 2, tRatio, MaxIt = 200)
 
 \item{MaxIt}{An MaxIt parameter for TLE method.}
 }
+\value{
+xxx
+}
 \description{
 Method TLE.
 }
