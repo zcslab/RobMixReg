@@ -11,8 +11,14 @@ r package
   <img width="350"  src="https://github.com/changwn/RobMixReg/blob/master/pic2.png">
 </p>
 
+# Install from CRAN
+```
+install.packages("RobMixReg)
+library("RobMixReg")
+```
 
-# Installation
+# Install from github for most updated package. 
+#### Please report the bug as the description in the Question&Problem.
 ```
 library("devtools")
 devtools::install_github("changwn/RobMixReg")
