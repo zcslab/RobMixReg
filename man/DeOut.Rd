@@ -2,18 +2,18 @@
 % Please edit documentation in R/CTLE.short.R
 \name{DeOut}
 \alias{DeOut}
-\title{DeOut function title.}
+\title{DeOut : Detect outlier observations.}
 \usage{
 DeOut(daData, method)
 }
 \arguments{
-\item{daData}{A parameter.}
+\item{daData}{A numerical vector.}
 
 \item{method}{Choose from '3sigma','hampel' and 'boxplot'.}
 }
 \value{
-The result explanation.
+indices of outlier observations.
 }
 \description{
-DeOut function title.
+Detect outlier observations from a vector.
 }

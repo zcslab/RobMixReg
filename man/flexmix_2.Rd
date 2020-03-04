@@ -2,22 +2,22 @@
 % Please edit documentation in R/CTLE.short.R
 \name{flexmix_2}
 \alias{flexmix_2}
-\title{flexmix_2 function title.}
+\title{flexmix_2: Multiple runs of MLE based mixture regression to stabilize the output.}
 \usage{
 flexmix_2(formula, data1, k, mprior)
 }
 \arguments{
-\item{formula}{A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.}
+\item{formula}{A symbolic description of the model to be fit.}
 
-\item{data1}{The data matrix for mixture regression.}
+\item{data1}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{k}{The default mixture regression line number.}
+\item{k}{Number of mixture components.}
 
-\item{mprior}{A number.}
+\item{mprior}{A numeric number in (0,1) that specifies the minimum proportion of samples in each mixing components.}
 }
 \value{
-The result explanation.
+A S4 object of flexmix class. xxx
 }
 \description{
-flexmix_2 function title.
+Mixture regression based on MLE could be unstable when assuming unequal variance. Multiple runs of flexmix is performed to stabilize the results.
 }

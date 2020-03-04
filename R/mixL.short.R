@@ -1,21 +1,20 @@
 
-#' denLp : xxx.
-#' @description xxx
-#' @param rr The parameter.
-#' @param sig The parameter.
-#' @return Return value.
+#' denLp : Density function for Laplace distribution.
+#' @description Laplace distribution.
+#' @param rr Shift from the location parameter
+#' @param sig Scale parameter.
+#' @return Laplace density.
 denLp=function(rr,sig){
         exp(-abs(sqrt(2)*(rr))/sig)/(sqrt(2)*sig)
 }
 
 
-#' mixLp_one function.
-#' @description One step for the mixLp mixture regression. For more details, please see the 'mixLp' function.
+#' mixLp_one : mixLp_one estimates the mixture regression parameters robustly using Laplace distribution based on one initial value.
+#' @description Robust mixture regression assuming that the error terms follow a Laplace distribution.
 #' @param formula A symbolic description of the model to be fit.
-#' @param data A data frame containing the variables in the model.
-#' @param nc The number of component. Default value is 2.
-#' @description The robust EM algorithm to fit the mixture of linear regression based on bisquare function. Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models.
-#' @return xxx.
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param nc Number of mixture components.
+#' @return Estimated coefficients of all components.
 ################
 mixLp_one<-function(formula,data,nc=2){
 	nx=ncol(data)-1; n = nrow(data)
@@ -76,22 +75,23 @@ sig=sig0;pr=pr0;bet=bet0
 }
 
 
-#' Method mixLp.
+
+#' mixLp : mixLp_one estimates the mixture regression parameters robustly using Laplace distribution based on multiply initial value..
 #' @name mixLp
 #' @description mixLp estimates the mixture regression parameters robustly using bisquare function based on multiple initial values. The solution is found by the modal solution.
 #' @rdname mixLp-methods
 #' @exportMethod mixLp.
 #' @param formula A symbolic description of the model to be fit.
-#' @param data A data frame containing the variables in the model.
-#' @param nc An optional number of clusters.
-#' @param numini The minimal value of nu.
-#' @usage mixLp(formula, data, nc=2, numini=200)
-#' @return xxxxxx
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param nc Number of mixture components.
+#' @param nit Number of iterations
+#' @usage mixLp(formula, data, nc=2, nit=200)
+#' @return Estimated coefficients of all components.
 ##########################################################################################
 ##### setGeneric function mixLp
 ##########################################################################################
 setGeneric("mixLp",
-	function(formula,data, nc=2,numini=200)
+	function(formula,data, nc=2,nit=200)
 	standardGeneric("mixLp"))
 
 #' @rdname mixLp-methods
@@ -104,8 +104,8 @@ setGeneric("mixLp",
 ### if called with existing mixLp object (as result=), then restart estimate...
 ### #######################################################################################
 setMethod("mixLp",
-	signature(formula="formula",data="ANY",nc="numeric",numini="numeric"),
-	function(formula,data, nc=2,numini=20)
+	signature(formula="formula",data="ANY",nc="numeric",nit="numeric"),
+	function(formula,data, nc=2,nit=20)
 	{
 		mycall = match.call();
 
@@ -114,12 +114,12 @@ setMethod("mixLp",
 		perm=permutations(nc,nc);
 		est=mixLp_one(formula,data,nc);
 		lenpar=length(c(est$theta));
-		theta= matrix(rep(0,lenpar*(numini)),ncol=lenpar);
+		theta= matrix(rep(0,lenpar*(nit)),ncol=lenpar);
 		theta[1,]=c(est$theta);
 		trimbet=matrix(theta[1,1:(p*nc)],nrow=nc);
 		trimbet=matrix(rep(matrix(t(trimbet),ncol=p*nc,byrow=T),gamma(nc+1)),ncol=p*nc,byrow=T);
-		ind=matrix(rep(0,numini),nrow=1);ind[1]=1;numsol=1;solindex=1; sol=matrix(theta[1,],nrow=1);
-		for(i in 2:numini){
+		ind=matrix(rep(0,nit),nrow=1);ind[1]=1;numsol=1;solindex=1; sol=matrix(theta[1,],nrow=1);
+		for(i in 2:nit){
 			est=mixLp_one(formula,data,nc)
 			theta[i,]=est$theta;
 			temp= matrix(theta[i,1:(p*nc)],nrow=nc);
@@ -132,7 +132,7 @@ setMethod("mixLp",
 				sol=rbind(sol,theta[i,]);
 				numsol=numsol+1;
 				solindex=c(solindex,i);
-				ind=rbind(ind,rep(0,numini));
+				ind=rbind(ind,rep(0,nit));
 				ind[numsol,i]=1
 			}else{
 				ind1=which(dif==min(dif));

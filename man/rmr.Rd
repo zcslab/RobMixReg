@@ -5,24 +5,22 @@
 \title{The main function of Robust Mixture Regression using five methods.}
 \usage{
 rmr(lr.method = "flexmix", formula = NULL, data = NULL, nc = 2,
-  nit = 20, tRatio = 0.05, MaxIt = 200, numini = 20)
+  nit = 20, tRatio = 0.05, MaxIt = 200)
 }
 \arguments{
-\item{lr.method}{A robust mixture regression method to be used. Should be one of "flexmix", "TLE", "CTLE", "biSquare".}
+\item{lr.method}{A robust mixture regression method to be used. Should be one of "flexmix", "TLE", "CTLE", "mixbi","mixLp".}
 
-\item{formula}{A symbolic description of the model to be fit. The general form is "y~x|g" where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.}
+\item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{An optional number of clusters.}
+\item{nc}{Number of mixture components.}
 
-\item{nit}{An nit parameter for CTLE method.}
+\item{nit}{Number of iterations for CTLE, mixbi, mixLp.}
 
-\item{tRatio}{An tRatio parameter for TLE method.}
+\item{tRatio}{Trimming proportion for TLE method.}
 
-\item{MaxIt}{An MaxIt parameter for TLE method.}
-
-\item{numini}{An numini parameter for biSauqre method.}
+\item{MaxIt}{Maximum iteration for TLE method.}
 }
 \value{
 An S4 object about the regression result.

@@ -2,20 +2,20 @@
 % Please edit documentation in R/bi_square.short.R
 \name{mixlinrb_bione}
 \alias{mixlinrb_bione}
-\title{mixlinrb_bione function title.}
+\title{mixlinrb_bione : mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function based on one initial value.}
 \usage{
 mixlinrb_bione(formula, data, nc = 2)
 }
 \arguments{
-\item{formula}{A formula.}
+\item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{The data matrix for mixture regression.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{The number of component.}
+\item{nc}{Number of mixture components.}
 }
 \value{
-Return value.
+Estimated coefficients of all components.
 }
 \description{
-mixlinrb_bione function title.
+: An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 }

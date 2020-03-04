@@ -4,7 +4,7 @@
 \name{CTLE}
 \alias{CTLE}
 \alias{CTLE,formula,ANY,ANY,numeric-method}
-\title{Method CTLE.}
+\title{CTLE: Robust mixture regression based on component-wise adaptive trimming likelihood estimation.}
 \usage{
 CTLE(formula, data, nit = 20, nc = 2)
 
@@ -14,12 +14,12 @@ CTLE(formula, data, nit = 20, nc = 2)
 \arguments{
 \item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nit}{An nit parameter for CTLE method.}
+\item{nit}{Number of iterations.}
 
-\item{nc}{An optional number of clusters.}
+\item{nc}{Number of mixture components.}
 }
 \description{
-Method CTLE.
+CTLE performes robust linear regression with high breakdown point and high efficiency in each mixing components and adaptively remove the outlier samples.
 }

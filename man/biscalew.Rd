@@ -2,16 +2,16 @@
 % Please edit documentation in R/bi_square.short.R
 \name{biscalew}
 \alias{biscalew}
-\title{biscalew function title.}
+\title{biscalew :Robust M-estimates for scale.}
 \usage{
 biscalew(t)
 }
 \arguments{
-\item{t}{A number.}
+\item{t}{Numerical input, usually residuals.}
 }
 \value{
-Return value.
+bisquare weight for scale.
 }
 \description{
-biscalew function title.
+Tukey's bisquare family of functions.
 }

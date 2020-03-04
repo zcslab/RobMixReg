@@ -5,7 +5,7 @@
 \alias{TLE}
 \alias{TLE,formula,ANY,numeric,numeric,numeric-method}
 \alias{CTLE,formula,ANY,numeric,numeric,numeric-method}
-\title{Method TLE.}
+\title{TLE: robust mixture regression based on trimmed likelihood estimation.}
 \usage{
 TLE(formula, data, nc = 2, tRatio, MaxIt = 200)
 
@@ -15,17 +15,17 @@ TLE(formula, data, nc = 2, tRatio, MaxIt = 200)
 \arguments{
 \item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{An optional number of clusters.}
+\item{nc}{Number of mixture components.}
 
-\item{tRatio}{An tRatio parameter for TLE method.}
+\item{tRatio}{Trimming proportion.}
 
-\item{MaxIt}{An MaxIt parameter for TLE method.}
+\item{MaxIt}{Maximum iteration.}
 }
 \value{
-xxx
+A S4 object of RobMixReg class.
 }
 \description{
-Method TLE.
+The algorithm fits a mixture regression model after trimming a proportion of the observations, given by tRatio.
 }

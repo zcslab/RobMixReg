@@ -10,15 +10,15 @@ Class \code{RobMixReg} defines a robust mixture regression class as a S4 object.
 \section{Slots}{
 
 \describe{
-\item{\code{inds_in}}{The index number in the regression predicted line.(non-outlier)}
+\item{\code{inds_in}}{The indices of observations used in the parameter estimation.}
 
-\item{\code{indout}}{The index number not in the regression predicted line.(outlier)}
+\item{\code{indout}}{The indices of outlier samples, not used in the parameter estimation.}
 
-\item{\code{ctleclusters}}{The cluster information.}
+\item{\code{ctleclusters}}{The cluster membership of each observation.}
 
-\item{\code{compcoef}}{Component coefficient.}
+\item{\code{compcoef}}{Regression coefficients for each component.}
 
-\item{\code{comppvals}}{Component p values.}
+\item{\code{comppvals}}{Component p values.????}
 
 \item{\code{call}}{Call function.}
 }}

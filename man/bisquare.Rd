@@ -2,18 +2,18 @@
 % Please edit documentation in R/bi_square.short.R
 \name{bisquare}
 \alias{bisquare}
-\title{bisquare function title.}
+\title{bisquare : Robust estimates for mean.}
 \usage{
 bisquare(t, k = 4.685)
 }
 \arguments{
-\item{t}{A number.}
+\item{t}{Numerical input, usually residuals.}
 
-\item{k}{A number.}
+\item{k}{A constant tuning parameter, default is 4.685.}
 }
 \value{
-Return value.
+A bi-square weight for mean.
 }
 \description{
-bisquare function title.
+Tukey's bisquare family of functions.
 }

@@ -2,18 +2,18 @@
 % Please edit documentation in R/mixL.short.R
 \name{denLp}
 \alias{denLp}
-\title{denLp : xxx.}
+\title{denLp : Density function for Laplace distribution.}
 \usage{
 denLp(rr, sig)
 }
 \arguments{
-\item{rr}{The parameter.}
+\item{rr}{Shift from the location parameter}
 
-\item{sig}{The parameter.}
+\item{sig}{Scale parameter.}
 }
 \value{
-Return value.
+Laplace density.
 }
 \description{
-xxx
+Laplace distribution.
 }

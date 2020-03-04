@@ -1,28 +1,23 @@
 
-#' bisquare function title.
-#'
-#' @param t A number.
-#' @param k A number.
-#' @return Return value.
+#' bisquare : Robust estimates for mean.
+#' @description Tukey's bisquare family of functions.
+#' @param t Numerical input, usually residuals.
+#' @param k A constant tuning parameter, default is 4.685.
+#' @return A bi-square weight for mean.
 bisquare<-function(t,k=4.685){out=t*pmax(0,(1-(t/k)^2))^2;out}
 
-#' biscalew function title.
-#'
-#' @param t A number.
-#' @return Return value.
+#' biscalew :Robust M-estimates for scale.
+#' @description Tukey's bisquare family of functions.
+#' @param t Numerical input, usually residuals.
+#' @return bisquare weight for scale.
 biscalew<-function(t){ t[which(t==0)]=min(t[which(t!=0)])/10; out=pmin(1-(1-t^2/1.56^2)^3,1)/t^2;out}
 
-#' mixlinrb_bione function title.
-#'
-#' @param formula A formula.
-#' @param data The data matrix for mixture regression.
-#' @param nc The number of component.
-#' @return Return value.
-################
-#the robust EM algorithm to fit the mixture of linear regression based on bisquare function
-#Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models. Computational #Statistics and Data Analysis, 56, 2347-2359.
-#########################
-# mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function #based on one initial value
+#' mixlinrb_bione : mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function based on one initial value.
+#' @description : An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
+#' @param formula A symbolic description of the model to be fit.
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param nc Number of mixture components.
+#' @return Estimated coefficients of all components.
 mixlinrb_bione<-function(formula,data,nc=2){
 	nx=ncol(data)-1; n = nrow(data)
 	p=nx+1; n1=2*p;
@@ -66,23 +61,23 @@ mixlinrb_bione<-function(formula,data,nc=2){
 	est=list(theta=theta,difpar=dif,run=run)
 	return(est)
 }
-### mixlinrb_bi estimates the mixture regression parameters robustly using bisquare function #based on multiple initial values. The solution is found by the modal solution
 
 
-
-#' Method mixlinrb_bi.
+#' mixlinrb_bi: mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function based on multiply initial value.
+#' @description An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 #' @name mixlinrb_bi
 #' @rdname mixlinrb_bi-methods
 #' @exportMethod mixlinrb
 #' @param formula A symbolic description of the model to be fit.
-#' @param data A data frame containing the variables in the model.
-#' @param nc An optional number of clusters.
-#' @param numini An numini parameter for biSauqre method.
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param nc Number of mixture components.
+#' @param nit Number of iterations for biSauqre method.
+#' @return Estimated coefficients of all components.
 ##########################################################################################
 ##### setGeneric function mixlinrb_bi
 ##########################################################################################
 setGeneric("mixlinrb_bi",
-	function(formula,data, nc=2,numini=200)
+	function(formula,data, nc=2,nit=200)
 	standardGeneric("mixlinrb_bi"))
 
 #' @rdname mixlinrb_bi-methods
@@ -95,8 +90,8 @@ setGeneric("mixlinrb_bi",
 ### if called with existing mixlinrb_bi object (as result=), then restart estimate...
 ### #######################################################################################
 setMethod("mixlinrb_bi",
-	signature(formula="formula",data="ANY",nc="numeric",numini="numeric"),
-	function(formula,data, nc=2,numini=20)
+	signature(formula="formula",data="ANY",nc="numeric",nit="numeric"),
+	function(formula,data, nc=2,nit=20)
 	{
 		mycall = match.call();
 
@@ -105,12 +100,12 @@ setMethod("mixlinrb_bi",
 		perm=permutations(nc,nc);
 		est=mixlinrb_bione(formula,data,nc);
 		lenpar=length(c(est$theta));
-		theta= matrix(rep(0,lenpar*(numini)),ncol=lenpar);
+		theta= matrix(rep(0,lenpar*(nit)),ncol=lenpar);
 		theta[1,]=c(est$theta);
 		trimbet=matrix(theta[1,1:(p*nc)],nrow=nc);
 		trimbet=matrix(rep(matrix(t(trimbet),ncol=p*nc,byrow=T),gamma(nc+1)),ncol=p*nc,byrow=T);
-		ind=matrix(rep(0,numini),nrow=1);ind[1]=1;numsol=1;solindex=1; sol=matrix(theta[1,],nrow=1);
-		for(i in 2:numini){
+		ind=matrix(rep(0,nit),nrow=1);ind[1]=1;numsol=1;solindex=1; sol=matrix(theta[1,],nrow=1);
+		for(i in 2:nit){
 			est=mixlinrb_bione(formula,data,nc)
 			theta[i,]=est$theta;
 			temp= matrix(theta[i,1:(p*nc)],nrow=nc);
@@ -123,7 +118,7 @@ setMethod("mixlinrb_bi",
 				sol=rbind(sol,theta[i,]);
 				numsol=numsol+1;
 				solindex=c(solindex,i);
-				ind=rbind(ind,rep(0,numini));
+				ind=rbind(ind,rep(0,nit));
 				ind[numsol,i]=1
 			}else{
 				ind1=which(dif==min(dif));

@@ -4,7 +4,7 @@ Title: Robust Mixture Regression
 Version: 0.1.0
 Date: 2020-02-25
 Authors@R: c(person("Sha", "Cao", email = "shacao@iu.edu", role = c("aut", "cph","ths")),
-             person("Wenna", "Chang", email = "wnchang@iu.edu", role = c("aut", "cre")),
+             person("Wennan", "Chang", email = "wnchang@iu.edu", role = c("aut", "cre")),
              person("Chi", "Zhang", email = "czhang87@iu.edu", role = c("aut", "ctb","ths"))
              )
 Author: 
@@ -12,8 +12,12 @@ Author:
   Wennan Chang [aut, cre],
   Chi Zhang [aut, ctb, ths]
 Maintainer: Wennan Chang <wnchang@iu.edu>
-Description: Robust mixture regression.
-    Integrated total five algorithms.
+Description: Implementation of popular robust mixture regression methods based on different algorithms including: CTLE, component-wise adaptive trimming likelihood estimation; mixbi, bi-square estimation; mixL, Laplacian distribution; mixt, t-distribution; TLE, trimmed likelihood estimation.
+             Reference: 
+             Chun Yu, Weixin Yao, Kun Chen (2017) <doi:10.1002/cjs.11310>
+             NeyKov N, Filzmoser P, Dimova R et al. (2007) <doi:10.1016/j.csda.2006.12.024>
+             Bai X, Yao W. Boyer JE (2012) <https://doi.org/10.1016/j.csda.2012.01.016>
+             Wennen Chang, Sha Cao, Chi Zhang (2020) <arXiv:ready to submit>
 Depends: R (>= 3.5.0)
 License: GPL
 Encoding: UTF-8

@@ -1,14 +1,15 @@
 
-#' Method TLE.
+#' TLE: robust mixture regression based on trimmed likelihood estimation.
+#' @description The algorithm fits a mixture regression model after trimming a proportion of the observations, given by tRatio.
 #' @name TLE
 #' @rdname TLE-methods
 #' @exportMethod TLE
 #' @param formula A symbolic description of the model to be fit.
-#' @param data A data frame containing the variables in the model.
-#' @param tRatio An tRatio parameter for TLE method.
-#' @param MaxIt An MaxIt parameter for TLE method.
-#' @param nc An optional number of clusters.
-#' @return xxx
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param tRatio Trimming proportion.
+#' @param MaxIt Maximum iteration.
+#' @param nc Number of mixture components.
+#' @return A S4 object of RobMixReg class.
 ##########################################################################################
 ##### setGeneric function TLE
 ##########################################################################################

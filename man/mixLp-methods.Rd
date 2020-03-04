@@ -5,24 +5,24 @@
 \alias{mixLp}
 \alias{mixLp,formula,ANY,numeric,numeric-method}
 \alias{CTLE,formula,ANY,numeric,numeric-method}
-\title{Method mixLp.}
+\title{mixLp : mixLp_one estimates the mixture regression parameters robustly using Laplace distribution based on multiply initial value..}
 \usage{
-mixLp(formula, data, nc=2, numini=200)
+mixLp(formula, data, nc=2, nit=200)
 
 \S4method{mixLp}{formula,ANY,numeric,numeric}(formula, data, nc = 2,
-  numini = 20)
+  nit = 20)
 }
 \arguments{
 \item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{An optional number of clusters.}
+\item{nc}{Number of mixture components.}
 
-\item{numini}{The minimal value of nu.}
+\item{nit}{Number of iterations}
 }
 \value{
-xxxxxx
+Estimated coefficients of all components.
 }
 \description{
 mixLp estimates the mixture regression parameters robustly using bisquare function based on multiple initial values. The solution is found by the modal solution.

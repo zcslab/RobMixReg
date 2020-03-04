@@ -4,22 +4,25 @@
 \name{mixlinrb_bi}
 \alias{mixlinrb_bi}
 \alias{mixlinrb_bi,formula,ANY,numeric,numeric-method}
-\title{Method mixlinrb_bi.}
+\title{mixlinrb_bi: mixlinrb_bione estimates the mixture regression parameters robustly using bisquare function based on multiply initial value.}
 \usage{
-mixlinrb_bi(formula, data, nc = 2, numini = 200)
+mixlinrb_bi(formula, data, nc = 2, nit = 200)
 
 \S4method{mixlinrb_bi}{formula,ANY,numeric,numeric}(formula, data,
-  nc = 2, numini = 20)
+  nc = 2, nit = 20)
 }
 \arguments{
 \item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{An optional number of clusters.}
+\item{nc}{Number of mixture components.}
 
-\item{numini}{An numini parameter for biSauqre method.}
+\item{nit}{Number of iterations for biSauqre method.}
+}
+\value{
+Estimated coefficients of all components.
 }
 \description{
-Method mixlinrb_bi.
+An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 }

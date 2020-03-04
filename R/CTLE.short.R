@@ -1,10 +1,11 @@
 
-#' flexmix_2 function title.
-#' @param formula A symbolic description of the model to be fit. The general form is y~x|g where y is the response, x the set of predictors and g an optional grouping factor for repeated measurements.
-#' @param data1 The data matrix for mixture regression.
-#' @param k The default mixture regression line number.
-#' @param mprior A number.
-#' @return The result explanation.
+#' flexmix_2: Multiple runs of MLE based mixture regression to stabilize the output.
+#' @description Mixture regression based on MLE could be unstable when assuming unequal variance. Multiple runs of flexmix is performed to stabilize the results.
+#' @param formula A symbolic description of the model to be fit.
+#' @param data1 A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param k Number of mixture components.
+#' @param mprior A numeric number in (0,1) that specifies the minimum proportion of samples in each mixing components.
+#' @return A S4 object of flexmix class. xxx
 flexmix_2<-function(formula,data1,k,mprior){
         liks=NULL
         mix_list=list()
@@ -30,11 +31,11 @@ flexmix_2<-function(formula,data1,k,mprior){
 #' @name RobMixReg-class
 #' @rdname RobMixReg-class
 #' @exportClass RobMixReg
-#' @slot inds_in The index number in the regression predicted line.(non-outlier)
-#' @slot indout The index number not in the regression predicted line.(outlier)
-#' @slot ctleclusters The cluster information.
-#' @slot compcoef Component coefficient.
-#' @slot comppvals Component p values.
+#' @slot inds_in The indices of observations used in the parameter estimation.
+#' @slot indout The indices of outlier samples, not used in the parameter estimation.
+#' @slot ctleclusters The cluster membership of each observation.
+#' @slot compcoef Regression coefficients for each component.
+#' @slot comppvals Component p values.????
 #' @slot call Call function.
 setClass("RobMixReg",
 	representation(inds_in="numeric",
@@ -45,14 +46,15 @@ setClass("RobMixReg",
 	call="call"))
 
 
-#' Method CTLE.
+#' CTLE: Robust mixture regression based on component-wise adaptive trimming likelihood estimation.
+#' @description CTLE performes robust linear regression with high breakdown point and high efficiency in each mixing components and adaptively remove the outlier samples.
 #' @name CTLE
 #' @rdname CTLE-methods
 #' @exportMethod CTLE
 #' @param formula A symbolic description of the model to be fit.
-#' @param data A data frame containing the variables in the model.
-#' @param nit An nit parameter for CTLE method.
-#' @param nc An optional number of clusters.
+#' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
+#' @param nit Number of iterations.
+#' @param nc Number of mixture components.
 ##########################################################################################
 ##### setGeneric function CTLE
 ##########################################################################################
@@ -60,10 +62,11 @@ setGeneric("CTLE",
 	function(formula,data, nit=20,nc=2)
 	standardGeneric("CTLE"))
 
-#' DeOut function title.
-#' @param daData A parameter.
+#' DeOut : Detect outlier observations.
+#' @description Detect outlier observations from a vector.
+#' @param daData A numerical vector.
 #' @param method Choose from '3sigma','hampel' and 'boxplot'.
-#' @return The result explanation.
+#' @return indices of outlier observations.
 DeOut<-function(daData,method){
 ################################################################################################################################################################
 ## Old 3 sigma, or "normal", Rule

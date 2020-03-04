@@ -2,22 +2,20 @@
 % Please edit documentation in R/mixL.short.R
 \name{mixLp_one}
 \alias{mixLp_one}
-\title{mixLp_one function.}
+\title{mixLp_one : mixLp_one estimates the mixture regression parameters robustly using Laplace distribution based on one initial value.}
 \usage{
 mixLp_one(formula, data, nc = 2)
 }
 \arguments{
 \item{formula}{A symbolic description of the model to be fit.}
 
-\item{data}{A data frame containing the variables in the model.}
+\item{data}{A data frame containing the predictor and response variables, where the last column is the response varible.}
 
-\item{nc}{The number of component. Default value is 2.}
+\item{nc}{Number of mixture components.}
 }
 \value{
-xxx.
+Estimated coefficients of all components.
 }
 \description{
-One step for the mixLp mixture regression. For more details, please see the 'mixLp' function.
-
-The robust EM algorithm to fit the mixture of linear regression based on bisquare function. Bai, X., Yao, W._, and Boyer, J. E. (2012). Robust fitting of mixture regression models.
+Robust mixture regression assuming that the error terms follow a Laplace distribution.
 }
