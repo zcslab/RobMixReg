@@ -17,5 +17,5 @@ mixlinrb_bione(formula, data, nc = 2)
 Estimated coefficients of all components.
 }
 \description{
-: An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
+An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 }
