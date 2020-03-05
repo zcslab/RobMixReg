@@ -41,7 +41,8 @@ example_data01=data.frame(x,y)
 res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01)
 res_rmr = rmr(lr.method='TLE', formula=formula01, data=example_data01)
 res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01)
-res_rmr = rmr(lr.method='biSquare', formula=formula01, data=example_data01)
+res_rmr = rmr(lr.method='mixbi', formula=formula01, data=example_data01)
+res_rmr = rmr(lr.method='mixLp', formula=formula01, data=example_data01)
 
 # simuData
 example_data02 <- simuData[,1:3]
@@ -50,8 +51,8 @@ formula02=as.formula("y~X1+X2")
 res_rmr = rmr(lr.method='flexmix', formula=formula01, data=example_data01, nc=3)
 res_rmr = rmr(lr.method='TLE', formula=formula01, data=example_data01, nc=3,tRatio=0.05)
 res_rmr = rmr(lr.method='CTLE', formula=formula01, data=example_data01, nc=3)
-res_rmr = rmr(lr.method='biSquare', formula=formula01, data=example_data01, nc=3)
-
+res_rmr = rmr(lr.method='mixbi', formula=formula01, data=example_data01, nc=3)
+res_rmr = rmr(lr.method='mixLp', formula=formula01, data=example_data01, nc=3)
 
 ```
 # Questions & Problems
