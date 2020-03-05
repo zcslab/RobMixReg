@@ -36,4 +36,9 @@ This submission revised as below description based on the Jelena Saf's comments.
 
 5. Rewrite the document (.Dd documentation) for all the functions.
 
+##2020-03-05
+
+Thanks the response from the Uwe Ligges.
+
+This submisstion fixed the doi issue in the DESCRIPTION file.
 
