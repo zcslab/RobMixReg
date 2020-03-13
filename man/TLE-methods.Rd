@@ -30,7 +30,7 @@ A S4 object of RobMixReg class.
 The algorithm fits a mixture regression model after trimming a proportion of the observations, given by tRatio.
 }
 \examples{
-library(RobMixReg)
+library("RobMixReg")
 formula01=as.formula("y~x")
 x=(gaussData$x);y=as.numeric(gaussData$y);
 example_data01=data.frame(x,y)

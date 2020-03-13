@@ -38,7 +38,7 @@ flexmix_2<-function(formula,data1,k,mprior){
 #' @slot comppvals Component p values.????
 #' @slot call Call function.
 setClass("RobMixReg",
-	representation(inds_in="numeric",
+	representation(inds_in="ANY",
 	indout="ANY",
 	ctleclusters="ANY",
 	compcoef="ANY",
@@ -56,7 +56,7 @@ setClass("RobMixReg",
 #' @param nit Number of iterations.
 #' @param nc Number of mixture components.
 #' @examples
-#' library(RobMixReg)
+#' library("RobMixReg")
 #' formula01=as.formula("y~x")
 #' x=(gaussData$x);y=as.numeric(gaussData$y);
 #' example_data01=data.frame(x,y)

@@ -88,7 +88,7 @@ sig=sig0;pr=pr0;bet=bet0
 #' @usage mixLp(formula, data, nc=2, nit=200)
 #' @return Estimated coefficients of all components.
 #' @examples
-#' library(RobMixReg)
+#' library("RobMixReg")
 #' formula01=as.formula("y~x")
 #' x=(gaussData$x);y=as.numeric(gaussData$y);
 #' example_data01=data.frame(x,y)

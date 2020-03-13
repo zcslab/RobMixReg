@@ -11,7 +11,7 @@
 #' @param nc Number of mixture components.
 #' @return A S4 object of RobMixReg class.
 #' @examples
-#' library(RobMixReg)
+#' library("RobMixReg")
 #' formula01=as.formula("y~x")
 #' x=(gaussData$x);y=as.numeric(gaussData$y);
 #' example_data01=data.frame(x,y)

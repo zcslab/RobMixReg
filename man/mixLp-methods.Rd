@@ -28,7 +28,7 @@ Estimated coefficients of all components.
 mixLp estimates the mixture regression parameters robustly using bisquare function based on multiple initial values. The solution is found by the modal solution.
 }
 \examples{
-library(RobMixReg)
+library("RobMixReg")
 formula01=as.formula("y~x")
 x=(gaussData$x);y=as.numeric(gaussData$y);
 example_data01=data.frame(x,y)

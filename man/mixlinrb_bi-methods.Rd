@@ -26,10 +26,3 @@ Estimated coefficients of all components.
 \description{
 An EM-type of parameter estimation by replacing the least square estimation in the M-step with a robust criterior.
 }
-\examples{
-library(RobMixReg)
-formula01=as.formula("y~x")
-x=(gaussData$x);y=as.numeric(gaussData$y);
-example_data01=data.frame(x,y)
-res = mixlinrb_bi(formula01,example_data01,nc=2, nit=20)
-}

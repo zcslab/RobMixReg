@@ -48,4 +48,4 @@ Thanks the response from the Jelena Saf's comments.
 
 1. Add explaination for the abbreviation of algorithms in the DESCRIPTION file.
 
-2. 
+2. Add example for each algorithm and enalble auto testing.

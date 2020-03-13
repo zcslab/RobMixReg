@@ -73,12 +73,6 @@ mixlinrb_bione<-function(formula,data,nc=2){
 #' @param nc Number of mixture components.
 #' @param nit Number of iterations for biSauqre method.
 #' @return Estimated coefficients of all components.
-#' @examples
-#' library(RobMixReg)
-#' formula01=as.formula("y~x")
-#' x=(gaussData$x);y=as.numeric(gaussData$y);
-#' example_data01=data.frame(x,y)
-#' res = mixlinrb_bi(formula01,example_data01,nc=2, nit=20)
 ##########################################################################################
 ##### setGeneric function mixlinrb_bi
 ##########################################################################################
