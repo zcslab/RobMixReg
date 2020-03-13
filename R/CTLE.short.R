@@ -55,6 +55,12 @@ setClass("RobMixReg",
 #' @param data A data frame containing the predictor and response variables, where the last column is the response varible.
 #' @param nit Number of iterations.
 #' @param nc Number of mixture components.
+#' @examples
+#' library(RobMixReg)
+#' formula01=as.formula("y~x")
+#' x=(gaussData$x);y=as.numeric(gaussData$y);
+#' example_data01=data.frame(x,y)
+#' res = CTLE(formula01,example_data01, nit=20,nc=2)
 ##########################################################################################
 ##### setGeneric function CTLE
 ##########################################################################################

@@ -87,6 +87,12 @@ sig=sig0;pr=pr0;bet=bet0
 #' @param nit Number of iterations
 #' @usage mixLp(formula, data, nc=2, nit=200)
 #' @return Estimated coefficients of all components.
+#' @examples
+#' library(RobMixReg)
+#' formula01=as.formula("y~x")
+#' x=(gaussData$x);y=as.numeric(gaussData$y);
+#' example_data01=data.frame(x,y)
+#' res = mixLp(formula01, example_data01, nc=2, nit=20)
 ##########################################################################################
 ##### setGeneric function mixLp
 ##########################################################################################

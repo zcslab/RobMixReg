@@ -23,3 +23,10 @@ CTLE(formula, data, nit = 20, nc = 2)
 \description{
 CTLE performes robust linear regression with high breakdown point and high efficiency in each mixing components and adaptively remove the outlier samples.
 }
+\examples{
+library(RobMixReg)
+formula01=as.formula("y~x")
+x=(gaussData$x);y=as.numeric(gaussData$y);
+example_data01=data.frame(x,y)
+res = CTLE(formula01,example_data01, nit=20,nc=2)
+}

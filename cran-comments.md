@@ -42,3 +42,10 @@ Thanks the response from the Uwe Ligges.
 
 This submisstion fixed the doi issue in the DESCRIPTION file.
 
+##2020-03-13
+
+Thanks the response from the Jelena Saf's comments.
+
+1. Add explaination for the abbreviation of algorithms in the DESCRIPTION file.
+
+2. 

@@ -10,6 +10,12 @@
 #' @param MaxIt Maximum iteration.
 #' @param nc Number of mixture components.
 #' @return A S4 object of RobMixReg class.
+#' @examples
+#' library(RobMixReg)
+#' formula01=as.formula("y~x")
+#' x=(gaussData$x);y=as.numeric(gaussData$y);
+#' example_data01=data.frame(x,y)
+#' res = TLE(formula01,example_data01, nc=2,tRatio=0.05,MaxIt=200)
 ##########################################################################################
 ##### setGeneric function TLE
 ##########################################################################################
