@@ -49,3 +49,14 @@ Thanks the response from the Jelena Saf's comments.
 1. Add explaination for the abbreviation of algorithms in the DESCRIPTION file.
 
 2. Add example for each algorithm and enalble auto testing.
+
+
+##2020-03-19
+
+Thanks the comments from the Swetlana Herbrandt.
+
+1. Revise the mispelling in the DESCRIPTION file.
+
+2. Replace the \dontrun by \donttest since the test take more than 5 sec and thus cause the NOTE.
+
+
