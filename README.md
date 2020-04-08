@@ -2,14 +2,11 @@
 r package
 
 ### Robust Mixture Regression Plot (with outliers)
-<p align="center">
-  <img width="400"  src="https://github.com/changwn/RobMixReg/blob/master/pic1.png">
-</p>
+![line1](pic1.png)
+
 
 ### Add Regresseion Line
-<p align="center">
-  <img width="350"  src="https://github.com/changwn/RobMixReg/blob/master/pic2.png">
-</p>
+![line2](pic2.png)
 
 # Install from CRAN
 ```
