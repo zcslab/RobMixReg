@@ -2,11 +2,11 @@
 r package
 
 ### Robust Mixture Regression Plot (with outliers)
-![line1](pic1.png)
+![[line1]](pic1.png)
 
 
 ### Add Regresseion Line
-![line2](pic2.png)
+![[line2]](pic2.png)
 
 # Install from CRAN
 ```
