@@ -1,6 +1,13 @@
 # Robust Mixture Regression
 r package
 
+[r package link](https://cran.r-project.org/web/packages/RobMixReg/index.html) [https://cran.r-project.org/web/packages/RobMixReg/index.html]
+
+[manual document](https://cran.r-project.org/web/packages/RobMixReg/RobMixReg.pdf) [https://cran.r-project.org/web/packages/RobMixReg/RobMixReg.pdf]
+
+* **License:** [![License](http://img.shields.io/badge/license-GPL%20v3-orange.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.en.html)
+* **Download:** ![Download](https://cranlogs.r-pkg.org/badges/RobMixReg)
+
 ### Robust Mixture Regression Plot (with outliers)
 ![[line1]](pic1.png)
 
